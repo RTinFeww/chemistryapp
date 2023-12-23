@@ -1,7 +1,8 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'chemical_symbol.dart';
 import 'detail_symbol.dart';
-import 'package:flutter/material.dart';
 
 // Widget Contents để hiển thị nội dung của ứng dụng
 class Contents extends StatelessWidget {
@@ -21,25 +22,25 @@ class Contents extends StatelessWidget {
   Color getColorCard(String classify) {
     switch (classify) {
       case 'Á kim':
-        return Color(0xFFF0E68C); // Màu Khaki
+        return const Color(0xFFF0E68C); // Màu Khaki
       case 'Khí hiếm':
-        return Color(0xFFF08080); // Đỏ
+        return const Color(0xFFF08080); // Đỏ
       case 'Phi kim':
-        return Color(0xFFD3D3D3); // Xám
+        return const Color(0xFFD3D3D3); // Xám
       case 'Kim loại kiềm':
-        return Color(0xFFD3A0D3); // Màu Violet
+        return const Color(0xFFD3A0D3); // Màu Violet
       case 'Kim loại kiềm thổ':
-        return Color(0xFF87CEFA); // Màu Light Sky Blue
+        return const Color(0xFF87CEFA); // Màu Light Sky Blue
       case 'Kim loại chuyển tiếp':
-        return Color(0xFFABD1B5); // Màu Green Pale
+        return const Color(0xFFABD1B5); // Màu Green Pale
       case 'Kim loại yếu':
-        return Color(0xFFCDE2B8); // Màu Tea Green
+        return const Color(0xFFCDE2B8); // Màu Tea Green
       case 'Halogen':
-        return Color(0xFFFF6347); // Màu Tomato
+        return const Color(0xFFFF6347); // Màu Tomato
       case 'Lanthanide':
-        return Color(0xFF20B2AA); // Màu Light Sea Green
+        return const Color(0xFF20B2AA); // Màu Light Sea Green
       default:
-        return Color(0xFFFFFF); // Màu mặc định
+        return const Color(0x00ffffff); // Màu mặc định
     }
   }
 
@@ -49,12 +50,12 @@ class Contents extends StatelessWidget {
       body: GridView.builder(
         // Sử dụng SliverGridDelegate để quy định số cột trong lưới
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
         itemCount: libary.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
             elevation: 2.0,
-            margin: EdgeInsets.all(10.0),
+            margin: const EdgeInsets.all(10.0),
             color: getColorCard(
                 libary[index].classify), // Lấy màu sắc từ phân loại
             shape: RoundedRectangleBorder(
@@ -73,26 +74,26 @@ class Contents extends StatelessWidget {
                   Text(
                     '${libary[index].chemicalelementnumber} ${libary[index].symbol}',
                     style:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                        const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                   ),
                   // Hiển thị tên gọi nguyên tố
                   Text(
-                    '${libary[index].nomenclature}',
+                    libary[index].nomenclature,
                     style:
-                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                        const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                   ),
                   // Hiển thị khối nguyên tử
                   Text(
                     '${libary[index].atomicblock}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16.0,
                     ),
                   ),
                   // Hiển thị trạng thái nguyên tố
                   Text(
-                    '${libary[index].state}',
+                    libary[index].state,
                     style:
-                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                        const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
