@@ -63,7 +63,7 @@ class _CompoundsState extends State<Compounds> {
 
     // Xây dựng URL để gửi yêu cầu API đến PubChem với công thức và yêu cầu dữ liệu chi tiết dưới dạng JSON
     var compoundDetailsUrl = Uri.parse(
-        'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/$formula/property/IUPACName,MolecularFormula,MolecularWeight,inchi,CanonicalSMILES,IsomericSMILES,title/JSON');
+        'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/fastformula/$formula/property/IUPACName,MolecularFormula,MolecularWeight,inchi,CanonicalSMILES,IsomericSMILES,title/JSON');
 
     // Gửi yêu cầu HTTP GET và đợi phản hồi từ server
     var compoundDetailsResponse = await http.get(compoundDetailsUrl);
