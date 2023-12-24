@@ -36,19 +36,28 @@ class MyApp extends StatelessWidget {
                   indicatorWeight: 20,  //dưới icon
                   tabs: [
                     Tab(
-                      text:
-                          languageProvider.isEnglish ? 'Element' : 'Nguyên tố',
+                      icon: Image.asset(
+                        'assets/giaodien/nguyento.png',
+                        height: 42,
+                        fit: BoxFit.cover,
+                      ),
+                      //text: languageProvider.isEnglish ? 'Element' : 'Nguyên tố',
                     ),
                     Tab(
-                      text:
-                          languageProvider.isEnglish ? 'Compound' : 'Hợp chất',
+                      icon: Image.asset(
+                        'assets/giaodien/hopchat.png',
+                        height: 42,
+                        fit: BoxFit.cover,
+                      ),
+                      //text: languageProvider.isEnglish ? 'Compound' : 'Hợp chất',
                     ),
                     Tab(
-                      text:
-                          languageProvider.isEnglish ? 'Searching' : 'Tìm kiếm',
-                    ),
-                    Tab(
-                      text: languageProvider.isEnglish ? 'Library' : 'Mục lục',
+                      icon: Image.asset(
+                        'assets/giaodien/timkiem.png',
+                        height: 42,
+                        fit: BoxFit.cover,
+                      ),
+                      //text: languageProvider.isEnglish ? 'Searching' : 'Tìm kiếm',
                     ),
                     Tab(
                       icon: Image.asset(
@@ -56,7 +65,15 @@ class MyApp extends StatelessWidget {
                         height: 42,
                         fit: BoxFit.cover,
                       ),
-                      text: languageProvider.isEnglish ? 'Setting' : 'Cài đặt',
+                      //text: languageProvider.isEnglish ? 'Library' : 'Mục lục',
+                    ),
+                    Tab(
+                      icon: Image.asset(
+                        'assets/giaodien/setting.png',
+                        height: 42,
+                        fit: BoxFit.cover,
+                      ),
+                      //text: languageProvider.isEnglish ? 'Setting' : 'Cài đặt',
                     ),
                   ],
                 ),
