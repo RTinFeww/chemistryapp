@@ -38,7 +38,8 @@ class MyApp extends StatelessWidget {
                     Tab(
                       icon: Image.asset(
                         'assets/giaodien/nguyento.png',
-                        height: 42,
+                        height: 80,
+                        width: 80,
                         fit: BoxFit.cover,
                       ),
                       //text: languageProvider.isEnglish ? 'Element' : 'Nguyên tố',
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
                     Tab(
                       icon: Image.asset(
                         'assets/giaodien/hopchat.png',
-                        height: 42,
+                        height: 50,
+                        width: 50,
                         fit: BoxFit.cover,
                       ),
                       //text: languageProvider.isEnglish ? 'Compound' : 'Hợp chất',
@@ -54,15 +56,17 @@ class MyApp extends StatelessWidget {
                     Tab(
                       icon: Image.asset(
                         'assets/giaodien/timkiem.png',
-                        height: 42,
+                        height: 60,
+                        width: 60,
                         fit: BoxFit.cover,
                       ),
                       //text: languageProvider.isEnglish ? 'Searching' : 'Tìm kiếm',
                     ),
                     Tab(
                       icon: Image.asset(
-                        'assets/giaodien/setting.png',
-                        height: 42,
+                        'assets/giaodien/lib.png',
+                        height: 50,
+                        width: 50,
                         fit: BoxFit.cover,
                       ),
                       //text: languageProvider.isEnglish ? 'Library' : 'Mục lục',
@@ -70,7 +74,8 @@ class MyApp extends StatelessWidget {
                     Tab(
                       icon: Image.asset(
                         'assets/giaodien/setting.png',
-                        height: 42,
+                        height: 50,
+                        width: 50,
                         fit: BoxFit.cover,
                       ),
                       //text: languageProvider.isEnglish ? 'Setting' : 'Cài đặt',
