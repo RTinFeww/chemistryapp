@@ -49,6 +49,11 @@ class MyApp extends StatelessWidget {
                       text: languageProvider.isEnglish ? 'Library' : 'Mục lục',
                     ),
                     Tab(
+                      icon: Image.asset(
+                        'assets/giaodien/setting.png',
+                         height : 100,
+                         width : 100,
+                         ),
                       text: languageProvider.isEnglish ? 'Setting' : 'Cài đặt',
                     ),
                   ],
