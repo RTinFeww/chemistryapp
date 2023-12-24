@@ -1,3 +1,4 @@
+//https://blog.logrocket.com/flutter-tabbar-a-complete-tutorial-with-examples/
 import 'package:chemistryapp/searchnamecp.dart';
 import 'package:flutter/material.dart';
 import 'library.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
                 centerTitle: true,
                 backgroundColor: Colors.deepPurple[200],
                 bottom: TabBar(
+                  indicatorWeight: 10,  //dưới icon
                   tabs: [
                     Tab(
                       text:
@@ -50,11 +52,12 @@ class MyApp extends StatelessWidget {
                     ),
                     Tab(
                       icon: Image.asset(
-                        'assets/giaodien/setting.png',
-                         height : 100,
-                         width : 100,
-                         ),
-                      text: languageProvider.isEnglish ? 'Setting' : 'Cài đặt',
+                        'assets/images/2.jpg',
+                        height: 20,
+                        fit: BoxFit.cover,
+                      )
+                      //icon: Icon(Icons.flight),
+                      //text: languageProvider.isEnglish ? 'Setting' : 'Cài đặt',
                     ),
                   ],
                 ),
