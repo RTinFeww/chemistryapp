@@ -565,7 +565,7 @@ List<chemicalsymbol> libary = [
       '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p⁶ 6s² 4f¹⁴ 5d¹⁰ 6p⁶ 7s² 5f¹⁴ 6d⁷'),
   chemicalsymbol(
       'Ds',
-      'Darmstadtium',
+      'Darmstadti',
       110,
       281.0,
       'Không màu',
