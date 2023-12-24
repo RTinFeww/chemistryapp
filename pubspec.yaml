@@ -32,6 +32,7 @@ flutter:
   assets:
     - assets/images/
     - assets/mp3_elements/
+    - assets/giaodien/
 
 flutter_icons:
   image_path: "assets/iconapp/icon.png"

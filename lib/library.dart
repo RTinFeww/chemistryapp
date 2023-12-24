@@ -1,9 +1,6 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import 'chemical_symbol.dart';
 import 'detail_symbol.dart';
-
 // Widget Contents để hiển thị nội dung của ứng dụng
 class Contents extends StatelessWidget {
   const Contents({Key? key});
@@ -22,25 +19,25 @@ class Contents extends StatelessWidget {
   Color getColorCard(String classify) {
     switch (classify) {
       case 'Á kim':
-        return const Color(0xFFF0E68C); // Màu Khaki
+        return Color(0xFFF0E68C); // Màu Khaki
       case 'Khí hiếm':
-        return const Color(0xFFF08080); // Đỏ
+        return Color(0xFFF08080); // Đỏ
       case 'Phi kim':
-        return const Color(0xFFD3D3D3); // Xám
+        return Color(0xFFD3D3D3); // Xám
       case 'Kim loại kiềm':
-        return const Color(0xFFD3A0D3); // Màu Violet
+        return Color(0xFFD3A0D3); // Màu Violet
       case 'Kim loại kiềm thổ':
-        return const Color(0xFF87CEFA); // Màu Light Sky Blue
+        return Color(0xFF87CEFA); // Màu Light Sky Blue
       case 'Kim loại chuyển tiếp':
-        return const Color(0xFFABD1B5); // Màu Green Pale
+        return Color(0xFFABD1B5); // Màu Green Pale
       case 'Kim loại yếu':
-        return const Color(0xFFCDE2B8); // Màu Tea Green
+        return Color(0xFFCDE2B8); // Màu Tea Green
       case 'Halogen':
-        return const Color(0xFFFF6347); // Màu Tomato
+        return Color(0xFFFF6347); // Màu Tomato
       case 'Lanthanide':
-        return const Color(0xFF20B2AA); // Màu Light Sea Green
+        return Color(0xFF20B2AA); // Màu Light Sea Green
       default:
-        return const Color(0x00ffffff); // Màu mặc định
+        return Color(0xFFFFFF); // Màu mặc định
     }
   }
 
@@ -50,12 +47,12 @@ class Contents extends StatelessWidget {
       body: GridView.builder(
         // Sử dụng SliverGridDelegate để quy định số cột trong lưới
         gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
         itemCount: libary.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
             elevation: 2.0,
-            margin: const EdgeInsets.all(10.0),
+            margin: EdgeInsets.all(10.0),
             color: getColorCard(
                 libary[index].classify), // Lấy màu sắc từ phân loại
             shape: RoundedRectangleBorder(
@@ -74,26 +71,26 @@ class Contents extends StatelessWidget {
                   Text(
                     '${libary[index].chemicalelementnumber} ${libary[index].symbol}',
                     style:
-                        const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                   ),
                   // Hiển thị tên gọi nguyên tố
                   Text(
-                    libary[index].nomenclature,
+                    '${libary[index].nomenclature}',
                     style:
-                        const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                   ),
                   // Hiển thị khối nguyên tử
                   Text(
                     '${libary[index].atomicblock}',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16.0,
                     ),
                   ),
                   // Hiển thị trạng thái nguyên tố
                   Text(
-                    libary[index].state,
+                    '${libary[index].state}',
                     style:
-                        const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

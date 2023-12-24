@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
                 centerTitle: true,
                 backgroundColor: Colors.deepPurple[200],
                 bottom: TabBar(
-                  indicatorWeight: 10,  //dưới icon
+                  indicatorWeight: 20,  //dưới icon
                   tabs: [
                     Tab(
                       text:
@@ -52,12 +52,11 @@ class MyApp extends StatelessWidget {
                     ),
                     Tab(
                       icon: Image.asset(
-                        'assets/images/2.jpg',
-                        height: 20,
+                        'assets/giaodien/setting.png',
+                        height: 42,
                         fit: BoxFit.cover,
-                      )
-                      //icon: Icon(Icons.flight),
-                      //text: languageProvider.isEnglish ? 'Setting' : 'Cài đặt',
+                      ),
+                      text: languageProvider.isEnglish ? 'Setting' : 'Cài đặt',
                     ),
                   ],
                 ),

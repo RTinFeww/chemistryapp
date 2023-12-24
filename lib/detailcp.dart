@@ -12,7 +12,7 @@ class CompoundDetails extends StatefulWidget {
   //Biến compound để lưu trữ thông tin hợp chất
   //Biến first15Synonyms là để lưu trữ 15 giá trị đầu tiên của synonyms hợp chất người dùng tìm kiếm
 
-  const CompoundDetails(
+  CompoundDetails(
       {Key? key,
       required this.formula,
       required this.compound,
@@ -42,6 +42,13 @@ class _CompoundDetailsState extends State<CompoundDetails> {
                     // Gọi hàm phát âm khi bấm vào nút
                     speakCommonName(synonym);
                   },
+                  child: Text(
+                    synonym,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold // Thay đổi màu sắc tại đây
+                        ),
+                  ),
                   // Thay dổi nút bấm
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -52,13 +59,6 @@ class _CompoundDetailsState extends State<CompoundDetails> {
                     backgroundColor: MaterialStateProperty.all<Color>(
                       Colors.deepPurple[200]!,
                     ),
-                  ),
-                  child: Text(
-                    synonym,
-                    style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold // Thay đổi màu sắc tại đây
-                        ),
                   ),
                 ),
               ))
@@ -84,7 +84,7 @@ class _CompoundDetailsState extends State<CompoundDetails> {
           body: SingleChildScrollView(
             child: Center(
               child: Container(
-                margin: const EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
                 width: MediaQuery.of(context).size.width * 1,
                 // Box để chứa nội dung với viền, màu nền và hình dạng được xác định
                 decoration: BoxDecoration(
@@ -103,16 +103,16 @@ class _CompoundDetailsState extends State<CompoundDetails> {
                       // Hiển thị CID và công thức của hợp chất
                       Text(
                         'PUBChem CID: ${widget.compound['CID']}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.black54,
                         ),
                       ),
-                      const SizedBox(height: 2),
+                      SizedBox(height: 2),
                       Text(
                         widget.formula,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 30,
                           color: Colors.black54,
@@ -134,7 +134,7 @@ class _CompoundDetailsState extends State<CompoundDetails> {
                           speakCommonName(widget.compound['IUPACName'] ??
                               widget.compound['Title']);
                         },
-                        child: const Icon(
+                        child: Icon(
                           Icons.volume_up,
                           size: 30,
                         ),
@@ -144,71 +144,71 @@ class _CompoundDetailsState extends State<CompoundDetails> {
                         languageProvider.isEnglish
                             ? 'IUPAC Name: ${widget.compound['IUPACName'] ?? 'Unknown'}'
                             : 'Tên IUPAC: ${widget.compound['IUPACName'] ?? 'Không xác định'}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                           color: Colors.black,
                         ),
                       ),
-                      const SizedBox(height: 5),
+                      SizedBox(height: 5),
                       // Hiển thị Công thức phân tử của hợp chất
                       Text(
                         languageProvider.isEnglish
                             ? 'Molecular Formula: ${widget.compound['MolecularFormula'] ?? 'Unknown'}'
                             : 'Công thức phân tử: ${widget.compound['MolecularFormula'] ?? 'Không xác định'}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                           color: Colors.black,
                         ),
                       ),
-                      const SizedBox(height: 5),
+                      SizedBox(height: 5),
                       // Hiển thị Trọng lượng phân tử của hợp chất
                       Text(
                         languageProvider.isEnglish
                             ? 'Molecular Weight: ${widget.compound['MolecularWeight'] ?? 'Unknown'}'
                             : 'Trọng lượng phân tử: ${widget.compound['MolecularWeight'] ?? 'Không xác định'}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                           color: Colors.black,
                         ),
                       ),
                       // Hiển thị InChI của hợp chất
-                      const SizedBox(height: 5),
+                      SizedBox(height: 5),
                       Text(
                         'InChI: ${widget.compound['InChI'] ?? 'Unknown'}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
                           color: Colors.black,
                         ),
                       ),
                       // Hiển thị CanonicalSMILES của hợp chất
-                      const SizedBox(height: 5),
+                      SizedBox(height: 5),
                       Text(
                         'CanonicalSMILES: ${widget.compound['CanonicalSMILES'] ?? 'Unknown'}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
                           color: Colors.black,
                         ),
                       ),
                       // Hiển thị IsomericSMILES của hợp chất
-                      const SizedBox(height: 5),
+                      SizedBox(height: 5),
                       Text(
                         'IsomericSMILES: ${widget.compound['IsomericSMILES'] ?? 'Unknown'}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
                           color: Colors.black,
                         ),
                       ),
                       // Hiển thị Title của hợp chất
-                      const SizedBox(height: 5),
+                      SizedBox(height: 5),
                       Text(
                         'Title: ${widget.compound['Title'] ?? 'Unknown'}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
                           color: Colors.black,
@@ -219,13 +219,13 @@ class _CompoundDetailsState extends State<CompoundDetails> {
                         languageProvider.isEnglish
                             ? 'IUPAC Name and Synonyms:'
                             : 'Pháp danh và đồng nghĩa:',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
                       _buildSynonymsList(),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10),
                       // Nút quay lại menu chính
                       ElevatedButton(
                         style: ButtonStyle(
@@ -250,11 +250,11 @@ class _CompoundDetailsState extends State<CompoundDetails> {
                             languageProvider.isEnglish
                                 ? 'Back to menu'
                                 : 'Quay lại menu',
-                            style: const TextStyle(fontSize: 16, color: Colors.black),
+                            style: TextStyle(fontSize: 16, color: Colors.black),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 5),
+                      SizedBox(height: 5),
                     ],
                   ),
                 ),

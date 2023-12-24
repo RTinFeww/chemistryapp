@@ -10,19 +10,18 @@ class Compounds extends StatefulWidget {
   const Compounds({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _CompoundsState createState() => _CompoundsState();
 }
 
 class _CompoundsState extends State<Compounds> {
   final FlutterTts flutterTts = FlutterTts();
-  final TextEditingController _textEditingController = TextEditingController();
+  TextEditingController _textEditingController = TextEditingController();
   List<Map<String, dynamic>> _compounds = [];
   String formulasearch = '';
   List<String> _synonyms = [];
   List<String> _first15Synonyms = [];
-  final _synonymsList = <List<String>>[];
-  final _synonymsMap = <int, List<String>>{};
+  List<List<String>> _synonymsList = [];
+  Map<int, List<String>> _synonymsMap = {};
   //Hàm đọc pháp danh
   Future<void> speakCommonName(String text) async {
     await flutterTts.setLanguage("en-US");
@@ -53,6 +52,8 @@ class _CompoundsState extends State<Compounds> {
       });
     } else {
       // In ra thông báo nếu không thành công
+      print(
+          'Failed to fetch compound names. Status code: ${response.statusCode}');
     }
   }
 
@@ -105,6 +106,14 @@ class _CompoundsState extends State<Compounds> {
                         // Gọi hàm phát âm khi bấm vào nút
                         speakCommonName(synonym);
                       },
+                      child: Text(
+                        synonym,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight:
+                                FontWeight.bold // Thay đổi màu sắc tại đây
+                            ),
+                      ),
                       style: ButtonStyle(
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -115,14 +124,6 @@ class _CompoundsState extends State<Compounds> {
                         backgroundColor: MaterialStateProperty.all<Color>(
                           Colors.deepPurple[200]!,
                         ),
-                      ),
-                      child: Text(
-                        synonym,
-                        style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight:
-                                FontWeight.bold // Thay đổi màu sắc tại đây
-                            ),
                       ),
                     ),
                   ))
@@ -152,10 +153,13 @@ class _CompoundsState extends State<Compounds> {
                         : 'Nhập công thức hoặc tên hợp chất. Ví dụ: (NH4)2SO4',
                   ),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 // Nút "Search" để thực hiện tìm kiếm
                 ElevatedButton(
                   onPressed: _searchCompound,
+                  child: Text(
+                    languageProvider.isEnglish ? 'Search' : 'Tìm kiếm',
+                  ),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -166,11 +170,8 @@ class _CompoundsState extends State<Compounds> {
                       Colors.deepPurple[200]!,
                     ),
                   ),
-                  child: Text(
-                    languageProvider.isEnglish ? 'Search' : 'Tìm kiếm',
-                  ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
                 // Danh sách kết quả tìm kiếm
                 Expanded(
                   child: ListView.builder(
@@ -181,8 +182,8 @@ class _CompoundsState extends State<Compounds> {
                           // Hiển thị thông tin về hợp chất
                           title: Text(
                             languageProvider.isEnglish
-                                ? 'Formula : $formulasearch'
-                                : 'Công thức : $formulasearch',
+                                ? 'Formula : ${formulasearch}'
+                                : 'Công thức : ${formulasearch}',
                           ),
                           subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,7 +191,7 @@ class _CompoundsState extends State<Compounds> {
                               Text(
                                 'CID PUBCHEM: ${_compounds[index]['CID']}',
                               ),
-                              const SizedBox(
+                              SizedBox(
                                 height: 8,
                               ),
                               Text(
