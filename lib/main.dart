@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
                     Tab(
                       icon: Image.asset(
                         'assets/giaodien/nguyento.png',
-                        height: 95,
-                        width: 95,
+                        height: 40,
+                        width: 40,
                         fit: BoxFit.cover,
                       ),
                       //text: languageProvider.isEnglish ? 'Element' : 'Nguyên tố',
@@ -56,8 +56,8 @@ class MyApp extends StatelessWidget {
                     Tab(
                       icon: Image.asset(
                         'assets/giaodien/timkiem.png',
-                        height: 70,
-                        width: 70,
+                        height: 42,
+                        width: 42,
                         fit: BoxFit.cover,
                       ),
                       //text: languageProvider.isEnglish ? 'Searching' : 'Tìm kiếm',

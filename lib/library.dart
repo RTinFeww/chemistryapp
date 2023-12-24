@@ -77,7 +77,7 @@ class Contents extends StatelessWidget {
                   Text(
                     '${libary[index].nomenclature}',
                     style:
-                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
                   ),
                   // Hiển thị khối nguyên tử
                   Text(
