@@ -123,7 +123,7 @@ class _CompoundsState extends State<Compounds> {
                         ),
                         backgroundColor: MaterialStateProperty.all<Color>(
                           //Colors.deepPurple[200]!,
-                          Color.fromARGB(255, 250, 178, 189)!,
+                          Color.fromARGB(255, 250, 178, 189),
                         ),
                       ),
                     ),
