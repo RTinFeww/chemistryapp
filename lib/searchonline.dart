@@ -150,8 +150,8 @@ class _CompoundsState extends State<Compounds> {
                   controller: _textEditingController,
                   decoration: InputDecoration(
                     hintText: languageProvider.isEnglish
-                        ? 'Enter formula or compound name. Example: (NH4)2SO4'
-                        : 'Nhập công thức hoặc tên hợp chất. Ví dụ: (NH4)2SO4',
+                        ? 'Enter formula or compound name. Example: FeSO4'
+                        : 'Nhập công thức hoặc tên hợp chất. Ví dụ: FeSO4',
                   ),
                 ),
                 SizedBox(height: 10),

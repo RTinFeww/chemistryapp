@@ -517,7 +517,7 @@ List<chemicalsymbol> libary = [
       'Actinide',
       '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p⁶ 6s² 4f¹⁴ 5d¹⁰ 6p⁶ 7s² 5f¹⁴ 6d¹'),
   chemicalsymbol('Rf', 'Rutherfordium', 104, 267.0, 'Không màu', 'Chất rắn',
-      'Kim loại chuyển tiếp', '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5'),
+      'Kim loại chuyển tiếp', '1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p⁶ 6s² 4f¹⁴ 5d¹⁰ 6p⁶ 7s² 5f¹⁴ 6d²'),
   chemicalsymbol(
       'Db',
       'Dubnium',
