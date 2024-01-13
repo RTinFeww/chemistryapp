@@ -27,7 +27,7 @@ class _searchNamecpState extends State<searchNamecp> {
     loadCompoundsFromSharedPreferences();
     _loadCompounds();
   }
-
+//load danh sách từ Shared và cập nhật
   _loadCompounds() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String>? compoundList = prefs.getStringList('compounds');
@@ -68,7 +68,7 @@ class _searchNamecpState extends State<searchNamecp> {
             libray.formula.toLowerCase().contains(query.toLowerCase()))
         .toList();
 
-    // Tìm kiếm trong biến toàn cục Compounds
+    // Tìm kiếm trong biến toàn cục Compounds, lưu vào
     searchResults = Compounds.where((library) =>
         library.formula.toLowerCase().contains(query.toLowerCase())).toList();
 

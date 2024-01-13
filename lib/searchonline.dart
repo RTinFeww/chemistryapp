@@ -103,7 +103,6 @@ class _CompoundsState extends State<Compounds> {
                     padding: const EdgeInsets.all(4.0),
                     child: TextButton(
                       onPressed: () {
-                        // Gọi hàm phát âm khi bấm vào nút
                         speakCommonName(synonym);
                       },
                       child: Text(

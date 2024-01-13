@@ -15,7 +15,7 @@ class Compounduser {
 
   Compounduser(this.formula, this.iupacName, this.commonName);
 
-  // Chuyển đối tượng thành dạng JSON
+// Chuyển đối tượng thành dạng JSON
   Map<String, dynamic> toJson() {
     return {
       'formula': formula,
@@ -24,7 +24,7 @@ class Compounduser {
     };
   }
 
-  // Phương thức tạo đối tượng từ JSON
+// Phương thức tạo đối tượng từ JSON
   factory Compounduser.fromJson(Map<String, dynamic> json) {
     return Compounduser(
       json['formula'],

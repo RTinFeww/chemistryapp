@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import '../language.dart';
 import 'package:provider/provider.dart';
-
+//hop chat
 class CompoundInfoWidget extends StatefulWidget {
   final String formula;
   final String iupacName;

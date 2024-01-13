@@ -61,7 +61,7 @@ class _SearchScreenState extends State<SearchScreen> {
               },
             ),
           ),
-          Expanded(
+         Expanded(
             child: Consumer<LanguageProvider>(
               builder: (context, languageProvider, _) {
                 return ListView.builder(
